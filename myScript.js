@@ -1,6 +1,7 @@
 
 let playerChoice = window.prompt("Whats your choice?");
 let markerHuman,markerComputer;
+let humanScore = 0, computerScore = 0;
 
 function getComputerChoice () {
     return Math.floor(Math.random()*3);
@@ -54,7 +55,11 @@ if (markerHuman === -1) {
                (markerHuman === 1 && markerComputer === 0) ||
                (markerHuman === 2 && markerComputer === 1)) {
         console.log("Human Victory");
+        ++humanScore;
     } else {
         console.log("Computer Victory");
+        ++computerScore;
     }
 }
+
+    console.log("Score: Computer: " + computerScore + "  Human: " + humanScore);
