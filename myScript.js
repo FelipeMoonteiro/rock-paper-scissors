@@ -6,7 +6,7 @@
 
     function playGame (rounds){
         for (let i = 0; i < rounds; i++){
-            let playerChoice = window.prompt("Whats your choice?");
+            let playerChoice = window.prompt("Rock, Paper or Scissors?");
             function getComputerChoice () {
                 return Math.floor(Math.random()*3);
             }
@@ -58,15 +58,15 @@
                 } else if ((markerHuman === 0 && markerComputer === 2) ||
                         (markerHuman === 1 && markerComputer === 0) ||
                         (markerHuman === 2 && markerComputer === 1)) {
-                    console.log("Human Victory");
+                    result = "Human Victory";
                     ++humanScore;
                 } else {
-                    console.log("Computer Victory");
+                    result = "Computer Victory";
                     ++computerScore;
                 }
             }
-
-                console.log("Score: Computer: " + computerScore + "  Human: " + humanScore);
+                alert(result);
+                alert("Score: Computer: " + computerScore + "  Human: " + humanScore);
 
         }
     }
