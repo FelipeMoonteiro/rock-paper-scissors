@@ -54,7 +54,7 @@
                 console.log("Game could not be played due to invalid input.");
             } else {
                 if (markerComputer === markerHuman) {
-                    console.log("Draw");
+                    result = "Dra;
                 } else if ((markerHuman === 0 && markerComputer === 2) ||
                         (markerHuman === 1 && markerComputer === 0) ||
                         (markerHuman === 2 && markerComputer === 1)) {
