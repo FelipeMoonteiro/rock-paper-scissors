@@ -88,7 +88,10 @@
                     ++computerScore;
                 }
             // }
- alert(result);
- alert("Score: Computer: " + computerScore + "  Human: " + humanScore);
+//  alert(result);
+//  alert("Score: Computer: " + computerScore + "  Human: " + humanScore);
+console.log(result);
+console.log("Score: Computer: " + computerScore + "  Human: " + humanScore);
+console.log("\n");
 }
     // }
