@@ -2,10 +2,29 @@
 
     let markerHuman,markerComputer;
     let humanScore = 0, computerScore = 0, rounds = 3;
+    let btn = document.querySelector("#btn");
 
+
+    btn.addEventListener('click', function(event) {
+        targetID = event.target.id;
+        switch(targetID){
+            case 'rock':
+                console.log('Rock button was clicked');
+                break;
+            case 'paper':
+                console.log("Paper button was clicked");
+                break;
+            case 'scissors':
+                console.log('Scissors button was clicked');
+                break;
+            default:
+                break;
+        }
+    });
+    
 
     function playGame (rounds){
-        for (let i = 0; i < rounds; i++){
+        // for (let i = 0; i < rounds; i++){
             let playerChoice = window.prompt("Rock, Paper or Scissors?");
             function getComputerChoice () {
                 return Math.floor(Math.random()*3);
@@ -69,5 +88,5 @@
                 alert("Score: Computer: " + computerScore + "  Human: " + humanScore);
 
         }
-    }
+    // }
 playGame(rounds);
