@@ -4,6 +4,10 @@
     let humanScore = 0, computerScore = 0, rounds = 3;
     let btn = document.querySelector("#btn");
 
+function writeMessage(id,msg){
+    let msgDiv = document.getElementById(id);
+    msgDiv.innerHTML = msg;
+}
 
     btn.addEventListener('click', function(event) {
         let targetID = event.target.id;
@@ -42,14 +46,17 @@
             switch (getComputerChoice()){
                 case 0:
                     console.log("Computer: Rock");
+                    writeMessage('computerPlay',"Computer: Rock");
                     markerComputer = 0;
                     break;
                 case 1:
                     console.log("Computer: Paper");
+                    writeMessage('computerPlay',"Computer: Paper");
                     markerComputer = 1;
                     break;
                 case 2:
                     console.log("Computer: Scissors");
+                    writeMessage('computerPlay',"Computer: Scissors");
                     markerComputer = 2;
                     break;
             }
@@ -91,6 +98,8 @@
 //  alert(result);
 //  alert("Score: Computer: " + computerScore + "  Human: " + humanScore);
 console.log(result);
+writeMessage('winner',result);
+writeMessage('finalScore',"Score: Computer: " + computerScore + "  Human: " + humanScore);
 console.log("Score: Computer: " + computerScore + "  Human: " + humanScore);
 console.log("\n");
 }
