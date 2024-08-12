@@ -1,7 +1,7 @@
 
 
     let markerHuman, markerComputer;
-    let humanScore = 0, computerScore = 0, rounds = 3;
+    let humanScore = 0, computerScore = 0, rounds = 5, currentRound = 0;
     let btn = document.querySelector("#btn");
 
 function writeMessage(id,msg){
@@ -30,7 +30,19 @@ function writeMessage(id,msg){
     playGame();
     });
 
-    function playGame (rounds){
+    function playGame (){
+        if ((computerScore - humanScore) > 0){
+            let finalWinner =  "Human Victory";
+        } else {
+            finalWinner =  "Computer Victory";
+        }
+
+        if (currentRound >= rounds){
+            writeMessage('computerPlay', "Game Over");
+            writeMessage('winner', finalWinner);
+            writeMessage('finalScore','Final Score: Computer:' + computerScore + ' ' +'Human: ' + humanScore);
+            return;
+        }
         let result;
         // for (let i = 0; i < rounds; i++){
             // let playerChoice = window.prompt("Rock, Paper or Scissors?");
@@ -100,6 +112,7 @@ function writeMessage(id,msg){
 console.log(result);
 writeMessage('winner',result);
 writeMessage('finalScore',"Score: Computer: " + computerScore + "  Human: " + humanScore);
+currentRound++;
 console.log("Score: Computer: " + computerScore + "  Human: " + humanScore);
 console.log("\n");
 }
